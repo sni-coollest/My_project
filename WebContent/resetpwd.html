@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>重置密码</title>
+<script type="text/javascript">
+function sub(){
+	var phnumber = document.getElementById("phnumber").value;
+	var password = document.getElementById("password").value;
+	var password_check = document.getElementById("password_check").value;
+	
+	if( phnumber != null && password != null && password_check != null){
+		document.resetpwd.submit();
+	}
+}
+</script>
+</head>
+<body align="center">
+<!--<form method="POST" action="resetPassword" name="resetPassword" autocomplete="off">
+<input type="text" placeholder="输入预留手机号" id="phnumber"><br/>
+<input type="password" placeholder="输入新密码" id="password"><br/>
+<input type="password" placeholder="重新输入新密码" id="password_check"><br/>
+<input type="button" value="提交" onClick="sub()">
+</form> 					时间不足-->
+<a href="Login.html">功能还未完成，请返回</a>
+</body>
+</html>

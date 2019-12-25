@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册</title>
+<style type="text/css"> 
+a{text-decoration:none}
+a:link {color: blue}
+a:visited {color: blue} 
+a:hover {color: blue}
+a:active {color: blue}
+</style>
+<script language="javascript">
+	var flag=0;
+	function sub(){
+		var username= document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		var password_check = document.getElementById("password_check").value;
+		if(username != null && password != null && password_check != null ){
+			if(flag>=3){
+				alert("注册成功！")
+				document.register.submit();
+			}else{
+				alert("注册信息有误!");
+				document.getElementById("username").value="";
+				document.getElementById("password").value="";
+				document.getElementById("password_check").value="";
+				document.getElementById("usName").innerHTML="";
+				document.getElementById("ps1").innerHTML="";
+				document.getElementById("ps2").innerHTML="";
+			}
+		}
+	}
+	function chang1(obj){
+		var obValue = obj.value;
+		if(obValue.length > 8 || obValue.length<3){
+			document.getElementById("usName").innerHTML="<font name='usName' style='font-size:12px;color:red'>长度要求3~8位!</font>";
+			flag=0;
+		}else{
+			document.getElementById("usName").innerHTML="";
+			flag++;
+		}
+	}
+	function chang2(obj){
+		var obValue = obj.value;
+		if(obValue.length > 8 || obValue.length < 6){
+			document.getElementById("ps1").innerHTML="<font style='font-size:12px;color:red'>长度要求6~8位!</font>";
+			flag=0;
+		}else{
+			document.getElementById("ps1").innerHTML="";
+			flag++;
+		}
+	}
+	function chang3(obj){
+		var obValue = obj.value;
+		var prrValue = document.getElementById("password").value;
+		if(prrValue != obValue){
+			document.getElementById("ps2").innerHTML="<font style='font-size:12px;color:red'>重复密码不正确</font>";
+			flag=0;
+		}else{
+			document.getElementById("ps2").innerHTML="";
+			flag++;
+		}
+	}
+</script>
+</head>
+<body style="text-align : center;">
+<img src="only1.jpg" style="width:10%;z-index: -1; position:fixed;left:80px;"/>
+<img src="tt1.jpg" style="width:7%;position:relative;right:30px"><img src="tt2.jpg" style="position:relative;left:100px;width:7.2%">
+<form method="POST" action="Register" name="register" autocomplete="off">
+<table align="center">
+<tr>
+	<td><font style="font-weight:bold;">用户名:</font></td>
+	<td><input type="text" name="username" id="username" value="" style="width:300px;height:30px;" onChange="chang1(this)"></td>
+</tr>
+<tr>
+<td></td>
+<td id="usName"></td>
+</tr>
+<tr>
+	<td><font style="font-weight:bold;">密码:</font></td>
+	<td><input type="password" name="password" id="password" style="width:300px;height:30px;" onChange="chang2(this)"/></td>
+</tr>
+<tr>
+<td></td>
+<td id="ps1"> </td>
+</tr>
+<tr>
+	<td><font style="font-weight:bold;">确认密码:</font></td>
+	<td><input type="password" name="password_check" id="password_check" style="width:300px;height:30px;" onChange="chang3(this)"/></td>
+</tr>
+<tr>
+<td></td>
+<td id="ps2"></td>
+</tr>
+<tr>
+	<td><font style="font-weight:bold;">手机号:</font></td>
+	<td><input type="text" name="phnumber" id="phnumber" style="width:300px;height:30px;"></td>
+</tr>
+</table>
+<!--  
+<input type="checkbox" id="Rcheck"/><font size="2px">阅读并接受<a href="duty.html" target="_blank">《用户协议》</a>及<a href="duty.html" target="_blank">《隐私权保护声明》</a></font><br/>
+-->
+<input type="button" value="注册" onClick="sub()" style="position:relative;background-color: #00CED1;font-size:17px;letter-spacing:10px;border:1px solid #d0d0d0;color: #ffffff;width:300px;height:35px;left:35px;top:5px;"/>
+</form>
+<a href="Login.html"><input type="button" value="返回" style="position:relative; background-color: #ffffff;font-size:17px;letter-spacing:10px;border:1px solid #d0d0d0;width:300px;height:35px;left:35px;top:10px;" /></a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>exam</display-name>
+  <welcome-file-list>
+      <welcome-file>Login.html</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>server</param-name>
+    <param-value>localhost</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbname</param-name>
+    <param-value>db_user</param-value>
+  </context-param>
+  <context-param>
+    <param-name>user</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>pwd</param-name>
+    <param-value>1234</param-value>
+  </context-param>
+</web-app>
